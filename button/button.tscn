@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2uhtsoshsvid"]
+
+[ext_resource type="Script" uid="uid://cgm8rkjbo2vbv" path="res://button/button.gd" id="1_d301k"]
+
+[node name="button" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 340.0
+offset_top = 110.0
+offset_right = 725.0
+offset_bottom = 486.0
+text = "eeeeeeee
+ueban
+suka"
+script = ExtResource("1_d301k")
