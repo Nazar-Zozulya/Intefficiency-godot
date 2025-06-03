@@ -1,15 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2uhtsoshsvid"]
+[gd_scene load_steps=5 format=3 uid="uid://c2uhtsoshsvid"]
 
+[ext_resource type="Script" uid="uid://ruhakavqdphm" path="res://button/main-button.gd" id="1_38736"]
 [ext_resource type="Script" uid="uid://cgm8rkjbo2vbv" path="res://button/button.gd" id="1_d301k"]
+[ext_resource type="Texture2D" uid="uid://cdo8ur1i83ibr" path="res://icon.svg" id="1_h27qj"]
+[ext_resource type="Texture2D" uid="uid://xfbfnsp638bj" path="res://button/kartinki-s-fakami-1.jpg" id="3_opf05"]
 
 [node name="button" type="Node2D"]
+script = ExtResource("1_38736")
 
 [node name="Button" type="Button" parent="."]
-offset_left = 340.0
-offset_top = 110.0
-offset_right = 725.0
-offset_bottom = 486.0
+offset_left = 419.0
+offset_top = 442.0
+offset_right = 739.0
+offset_bottom = 578.0
 text = "eeeeeeee
 ueban
 suka"
+icon = ExtResource("1_h27qj")
 script = ExtResource("1_d301k")
+
+[node name="fak" type="Sprite2D" parent="."]
+position = Vector2(577, 204)
+scale = Vector2(0.219795, 0.219795)
+texture = ExtResource("3_opf05")
