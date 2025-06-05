@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="intefficiency"
-run/main_scene="uid://b1m15h61ojbku"
+run/main_scene="uid://bt1dkpfu5gvrw"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
 [input]
