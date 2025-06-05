@@ -1,3 +1,16 @@
-[gd_scene format=3 uid="uid://cw0ijd4aeynf2"]
+[gd_scene load_steps=3 format=3 uid="uid://cw0ijd4aeynf2"]
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5lq1w"]
+size = Vector2(20, 37.5)
+
+[sub_resource type="ImageTexture" id="ImageTexture_cqmt1"]
+
+[node name="player" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5lq1w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-10, -19)
+scale = Vector2(20, 38)
+texture = SubResource("ImageTexture_cqmt1")
