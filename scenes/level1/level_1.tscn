@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bt1dkpfu5gvrw"]
+[gd_scene load_steps=4 format=3 uid="uid://bt1dkpfu5gvrw"]
 
 [ext_resource type="Texture2D" uid="uid://d2eln8oaf71vq" path="res://scenes/level1/bg.jpg" id="1_jrgot"]
-[ext_resource type="PackedScene" uid="uid://wfh8p6hdh73m" path="res://scenes/test enemy/test enemy.tscn" id="2_i0tyo"]
 [ext_resource type="PackedScene" uid="uid://t4l8osg6u116" path="res://scenes/wall/wall.tscn" id="2_k0kyn"]
 [ext_resource type="PackedScene" uid="uid://cw0ijd4aeynf2" path="res://scenes/player/player.tscn" id="4_od3ps"]
 
@@ -12,9 +11,6 @@ texture = ExtResource("1_jrgot")
 
 [node name="wall" parent="." instance=ExtResource("2_k0kyn")]
 position = Vector2(345, 121)
-
-[node name="Area2D" parent="." instance=ExtResource("2_i0tyo")]
-position = Vector2(134, -1)
 
 [node name="wall2" parent="." instance=ExtResource("2_k0kyn")]
 position = Vector2(346, -22)
