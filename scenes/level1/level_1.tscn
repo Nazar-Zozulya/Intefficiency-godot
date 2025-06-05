@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bt1dkpfu5gvrw"]
+[gd_scene load_steps=5 format=3 uid="uid://bt1dkpfu5gvrw"]
 
 [ext_resource type="Texture2D" uid="uid://d2eln8oaf71vq" path="res://scenes/level1/bg.jpg" id="1_jrgot"]
 [ext_resource type="PackedScene" uid="uid://t4l8osg6u116" path="res://scenes/wall/wall.tscn" id="2_k0kyn"]
+[ext_resource type="PackedScene" uid="uid://byadfrmng55xh" path="res://scenes/zombi/zombi.tscn" id="4_jrgot"]
 [ext_resource type="PackedScene" uid="uid://cw0ijd4aeynf2" path="res://scenes/player/player.tscn" id="4_od3ps"]
 
 [node name="level1" type="Node2D"]
@@ -19,3 +20,6 @@ position = Vector2(346, -22)
 position = Vector2(345, -166)
 
 [node name="player" parent="." instance=ExtResource("4_od3ps")]
+
+[node name="zombi" parent="." instance=ExtResource("4_jrgot")]
+position = Vector2(166, 1)
