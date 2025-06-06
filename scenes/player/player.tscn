@@ -1,10 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://cw0ijd4aeynf2"]
+[gd_scene load_steps=18 format=3 uid="uid://cw0ijd4aeynf2"]
 
 [ext_resource type="Script" uid="uid://dtlwhnp3hdur3" path="res://scenes/player/player.gd" id="1_75vfm"]
 [ext_resource type="Texture2D" uid="uid://cwga2nkp4garm" path="res://scenes/player/graphics/knight_f_hit_anim_f0.png" id="2_0owmy"]
+[ext_resource type="Texture2D" uid="uid://cg16ulmj61btf" path="res://scenes/player/graphics/zombie_anim_f1.png" id="2_fcs02"]
+[ext_resource type="Texture2D" uid="uid://d26nr5gvsmsyh" path="res://scenes/player/graphics/zombie_anim_f2.png" id="3_myrg7"]
 [ext_resource type="Texture2D" uid="uid://c2dqn8xpmg2sp" path="res://scenes/player/graphics/knight_f_idle_anim_f0.png" id="3_qek5x"]
 [ext_resource type="Texture2D" uid="uid://dtrajtfhhtq38" path="res://scenes/player/graphics/knight_f_idle_anim_f1.png" id="4_5gtgg"]
+[ext_resource type="Texture2D" uid="uid://bl04k2vekm5t2" path="res://scenes/player/graphics/zombie_anim_f3.png" id="4_kvlxm"]
 [ext_resource type="Texture2D" uid="uid://dv0o7vk0aua8k" path="res://scenes/player/graphics/knight_f_idle_anim_f2.png" id="5_h17s1"]
+[ext_resource type="Texture2D" uid="uid://37efnoqqresk" path="res://scenes/player/graphics/zombie_anim_f10.png" id="5_uf5tr"]
 [ext_resource type="Texture2D" uid="uid://vjnah132gkvq" path="res://scenes/player/graphics/knight_f_idle_anim_f3.png" id="6_je7p5"]
 [ext_resource type="Texture2D" uid="uid://dm6ey38x4qacs" path="res://scenes/player/graphics/knight_f_run_anim_f0.png" id="7_h17s1"]
 [ext_resource type="Texture2D" uid="uid://dqdaw80kd727d" path="res://scenes/player/graphics/knight_f_run_anim_f1.png" id="8_je7p5"]
@@ -14,6 +18,23 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fm80t"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fcs02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_myrg7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kvlxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uf5tr")
+}],
+"loop": false,
+"name": &"die",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_0owmy")
@@ -66,8 +87,10 @@ script = ExtResource("1_75vfm")
 [node name="animations" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -14)
 sprite_frames = SubResource("SpriteFrames_fm80t")
-animation = &"run"
+animation = &"die"
 autoplay = "idle"
+frame = 3
+frame_progress = 1.0
 
 [node name="collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)

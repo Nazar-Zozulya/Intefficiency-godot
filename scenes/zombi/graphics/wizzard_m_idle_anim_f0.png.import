@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://syl2v2m4e2fm"
-path="res://.godot/imported/wizzard_m_idle_anim_f1.png-7bd543f7f23bff6e02b947eec12f94bc.ctex"
+uid="uid://cgitrgt870gbb"
+path="res://.godot/imported/wizzard_m_idle_anim_f0.png-40ab3e300f1a611572315bc0b6443867.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/zombi/wizzard_m_idle_anim_f1.png"
-dest_files=["res://.godot/imported/wizzard_m_idle_anim_f1.png-7bd543f7f23bff6e02b947eec12f94bc.ctex"]
+source_file="res://scenes/zombi/graphics/wizzard_m_idle_anim_f0.png"
+dest_files=["res://.godot/imported/wizzard_m_idle_anim_f0.png-40ab3e300f1a611572315bc0b6443867.ctex"]
 
 [params]
 
