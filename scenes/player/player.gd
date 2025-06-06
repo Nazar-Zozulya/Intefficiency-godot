@@ -10,7 +10,7 @@ func _ready():
 	if stats == null:
 		stats = StatBlock.new()
 		stats.max_health = 10
-		stats.speed = 400
+		stats.speed = 300
 		stats.damage = 10
 		stats.armor = 0
 
@@ -73,7 +73,7 @@ func take_damage(amount: int) -> void:
 
 
 func async_func_reset_hit() -> void:
-	await get_tree().create_timer(0.3).timeout
+	await get_tree().create_timer(0.2).timeout
 	is_hit_anim_playing = false
 	is_damaged = false
 

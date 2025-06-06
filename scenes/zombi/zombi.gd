@@ -24,4 +24,5 @@ func get_direction_to_player():
 
 func _player_entered(body: Node2D) -> void:
 	if body.get_tree().get_first_node_in_group("player"):
-		body.take_damage(damage)
+		if body.has_method('take_damage'):
+			body.take_damage(damage)
