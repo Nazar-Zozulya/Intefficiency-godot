@@ -4,16 +4,16 @@ extends CharacterBody2D
 var player_direction = false
 var is_damaged = false
 var is_hit_anim_playing = false
+
 var dead_started = false
 
-func _ready():
-	if stats == null:
-		stats = StatBlock.new()
-		stats.max_health = 10
-		stats.speed = 300
-		stats.damage = 10
-		stats.armor = 0
 
+signal inventory_changed(inventory)
+
+var inventory: Array = []
+
+
+func _ready():
 	stats.health = stats.max_health
 
 
@@ -51,6 +51,17 @@ func update_animation(direction: Vector2) -> void:
 
 func update_velocity(direction: Vector2) -> void:
 	velocity = direction * stats.speed
+	
+
+
+
+
+func add_to_inventory(item):
+	inventory.append(item)
+	emit_signal("inventory_changed", inventory)
+
+
+
 
 
 func update_direction() -> void:

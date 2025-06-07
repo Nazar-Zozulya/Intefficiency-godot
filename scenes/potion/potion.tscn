@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4ldtru322y8"]
+
+[ext_resource type="Script" uid="uid://bql117257s71f" path="res://scenes/potion/potion.gd" id="1_u38d2"]
+[ext_resource type="Texture2D" uid="uid://dvfj46viaufv7" path="res://scenes/potion/potion.png" id="2_rsauq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plo0t"]
+size = Vector2(10, 10)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_u38d2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_plo0t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -5)
+scale = Vector2(0.0256757, 0.0256757)
+texture = ExtResource("2_rsauq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

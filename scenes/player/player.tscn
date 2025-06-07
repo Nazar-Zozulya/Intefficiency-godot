@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://cw0ijd4aeynf2"]
+[gd_scene load_steps=20 format=3 uid="uid://cw0ijd4aeynf2"]
 
 [ext_resource type="Script" uid="uid://dtlwhnp3hdur3" path="res://scenes/player/player.gd" id="1_75vfm"]
 [ext_resource type="Texture2D" uid="uid://cwga2nkp4garm" path="res://scenes/player/graphics/knight_f_hit_anim_f0.png" id="2_0owmy"]
 [ext_resource type="Texture2D" uid="uid://cg16ulmj61btf" path="res://scenes/player/graphics/zombie_anim_f1.png" id="2_fcs02"]
+[ext_resource type="Script" uid="uid://cuvkgg3okt300" path="res://scripts/stats.gd" id="2_myrg7"]
 [ext_resource type="Texture2D" uid="uid://d26nr5gvsmsyh" path="res://scenes/player/graphics/zombie_anim_f2.png" id="3_myrg7"]
 [ext_resource type="Texture2D" uid="uid://c2dqn8xpmg2sp" path="res://scenes/player/graphics/knight_f_idle_anim_f0.png" id="3_qek5x"]
 [ext_resource type="Texture2D" uid="uid://dtrajtfhhtq38" path="res://scenes/player/graphics/knight_f_idle_anim_f1.png" id="4_5gtgg"]
@@ -15,6 +16,14 @@
 [ext_resource type="Texture2D" uid="uid://d3lu5f0tkhj1k" path="res://scenes/player/graphics/knight_f_run_anim_f2.png" id="9_fm80t"]
 [ext_resource type="Texture2D" uid="uid://cff7kgtxmr02y" path="res://scenes/player/graphics/knight_f_run_anim_f3.png" id="10_gx1jg"]
 [ext_resource type="PackedScene" uid="uid://bjwb0t72n8jr0" path="res://scenes/player_ui/player_ui.tscn" id="11_je7p5"]
+
+[sub_resource type="Resource" id="Resource_kvlxm"]
+script = ExtResource("2_myrg7")
+max_health = 10
+speed = 300.0
+damage = 5
+armor = 0
+metadata/_custom_type_script = "uid://cuvkgg3okt300"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fm80t"]
 animations = [{
@@ -78,14 +87,15 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_gx1jg"]
-radius = 8.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_myrg7"]
+size = Vector2(15, 20)
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_75vfm")
+stats = SubResource("Resource_kvlxm")
 
 [node name="animations" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -14)
+position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_fm80t")
 animation = &"die"
 autoplay = "idle"
@@ -93,8 +103,8 @@ frame = 3
 frame_progress = 1.0
 
 [node name="collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, -8)
-shape = SubResource("CircleShape2D_gx1jg")
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_myrg7")
 
 [node name="player_ui" parent="." instance=ExtResource("11_je7p5")]
 
