@@ -1,18 +1,18 @@
 extends Area2D
 
 
-var potion = {
-	'id': 'potion_1',
-	"name": "Зелье здоровья",
-	"type": "potion",
-	"description": "Восстанавливает 50 здоровья",
-	"icon": "res://scenes/potion/potion.png",
-	"scene_path": "res://scenes/potion/potion.tscn",
-}
 
+
+@export var item: InventoryItem
+
+@onready var sprite: Sprite2D = $Sprite2D
+
+signal take_item(item)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	if item:
+		sprite.texture = item.texture
+		sprite.scale = Vector2(1, 1)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,5 +21,5 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group('player'):
-		body.add_to_inventory(potion)
+	queue_free()
+	take_item.emit(item)

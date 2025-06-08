@@ -30,7 +30,7 @@ func _process(delta):
 
 	$animations.flip_h = player_direction
 	move_and_slide()
-	$player_ui/Label.text = str(stats.health)
+	$"../player_ui"/hpBar.text = str(stats.health)
 
 
 func get_direction() -> Vector2:
@@ -56,9 +56,6 @@ func update_velocity(direction: Vector2) -> void:
 
 
 
-func add_to_inventory(item):
-	inventory.append(item)
-	emit_signal("inventory_changed", inventory)
 
 
 

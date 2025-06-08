@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5vbbmhud488e"]
+
+[ext_resource type="Script" uid="uid://dajdyq4wj2mp8" path="res://scenes/inventory/inv_panel/inv_panel.gd" id="1_nd4uk"]
+[ext_resource type="PackedScene" uid="uid://cunusqoli4svs" path="res://scenes/inventory/inv_slot/inv_slot.tscn" id="1_sc6wi"]
+
+[node name="inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 110.0
+offset_bottom = 48.0
+script = ExtResource("1_nd4uk")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 48.0
+
+[node name="Panel" parent="GridContainer" instance=ExtResource("1_sc6wi")]
+layout_mode = 2
+
+[node name="Panel2" parent="GridContainer" instance=ExtResource("1_sc6wi")]
+layout_mode = 2
+
+[node name="Panel3" parent="GridContainer" instance=ExtResource("1_sc6wi")]
+layout_mode = 2
+
+[node name="Panel4" parent="GridContainer" instance=ExtResource("1_sc6wi")]
+layout_mode = 2
