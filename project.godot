@@ -11,12 +11,13 @@ config_version=5
 [application]
 
 config/name="intefficiency"
-run/main_scene="uid://bt1dkpfu5gvrw"
+run/main_scene="uid://cps1lnesyj8ih"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
 [global_group]
 
 player=""
+item=""
 
 [input]
 

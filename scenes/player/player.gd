@@ -30,7 +30,8 @@ func _process(delta):
 
 	$animations.flip_h = player_direction
 	move_and_slide()
-	$"../player_ui"/hpBar.text = str(stats.health)
+	#print($"../../../player_ui/hpBar".text)
+	$"../../../player_ui/hpBar".text = str(stats.health)
 
 
 func get_direction() -> Vector2:
@@ -52,13 +53,6 @@ func update_animation(direction: Vector2) -> void:
 func update_velocity(direction: Vector2) -> void:
 	velocity = direction * stats.speed
 	
-
-
-
-
-
-
-
 
 
 func update_direction() -> void:

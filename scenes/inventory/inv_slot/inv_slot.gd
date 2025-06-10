@@ -8,9 +8,7 @@ func update(item: InventoryItem):
 	if !item:
 		#backgroundTexture.texture = item.texture
 		itemTexture.visible = false
-		print(item)
 	else:
-		print(item.texture)
 		itemTexture.visible = true
 		itemTexture.texture = item.texture
 		itemTexture.scale = Vector2(1,1)

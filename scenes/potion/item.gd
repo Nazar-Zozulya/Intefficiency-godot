@@ -8,14 +8,13 @@ extends Area2D
 @onready var sprite: Sprite2D = $Sprite2D
 
 signal take_item(item)
-# Called when the node enters the scene tree for the first time.
+
+
 func _ready() -> void:
 	if item:
-		sprite.texture = item.texture
 		sprite.scale = Vector2(1, 1)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 

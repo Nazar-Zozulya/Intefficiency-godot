@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4ldtru322y8"]
+
+[ext_resource type="Script" uid="uid://bql117257s71f" path="res://scenes/potion/item.gd" id="1_u38d2"]
+[ext_resource type="Resource" uid="uid://bkdf326kwehrm" path="res://scenes/inventory/jj.tres" id="2_rsauq"]
+[ext_resource type="Texture2D" uid="uid://cx1f1haaiacsk" path="res://scenes/zombi/graphics/wizzard_m_run_anim_f0.png" id="2_u38d2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plo0t"]
+size = Vector2(10, 10)
+
+[node name="item" type="Area2D" groups=["item"]]
+collision_layer = 8
+script = ExtResource("1_u38d2")
+item = ExtResource("2_rsauq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 8
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_plo0t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -5)
+scale = Vector2(0.0256757, 0.0256757)
+texture = ExtResource("2_u38d2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
