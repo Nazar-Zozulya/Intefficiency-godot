@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://dhr7ivp664rd8"]
+
+[ext_resource type="Script" uid="uid://bivfh81aukdas" path="res://scenes/inventory/inventoryItem.gd" id="1_jd5mk"]
+[ext_resource type="Texture2D" uid="uid://cn0xpeixv1i5q" path="res://scenes/zombi/graphics/wizzard_m_idle_anim_f2.png" id="2_jd5mk"]
+
+[resource]
+script = ExtResource("1_jd5mk")
+name = "lifepotion"
+texture = ExtResource("2_jd5mk")
+metadata/_custom_type_script = "uid://bivfh81aukdas"

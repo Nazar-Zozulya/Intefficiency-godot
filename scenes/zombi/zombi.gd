@@ -1,10 +1,7 @@
 extends CharacterBody2D
 
-@export var max_speed: float = 80
-@export var max_health: int = 100
-var current_health: int
-
-var player: Node2D
+var max_speed = 80
+var damage = 4
 
 func _ready():
 	current_health = max_health
@@ -12,18 +9,19 @@ func _ready():
 	update_health_bar()
 
 func _process(delta):
-	if player:
-		var direction = (player.global_position - global_position).normalized()
-		velocity = max_speed * direction
-		move_and_slide()
+	var direction = get_direction_to_player()
+	velocity = max_speed * direction
+	move_and_slide()
+	
+		
+			
+func get_direction_to_player():
+	var player = get_tree().get_first_node_in_group("player") as Node2D
+	if player != null:
+		return (player.global_position - global_position).normalized()
+	return Vector2(0,0)	 
 
-func take_damage(amount: int):
-	current_health = max(current_health - amount, 0)
-	update_health_bar()
-	if current_health <= 0:
-		queue_free()  # враг умирает
 
-func update_health_bar():
-	var bar = $HealthBar as ProgressBar
-	if bar:
-		bar.value = current_health
+func _player_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		body.take_damage(damage)

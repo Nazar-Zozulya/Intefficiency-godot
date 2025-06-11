@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxjddod61dbg1"
-path="res://.godot/imported/wizzard_m_hit_anim_f0.png-f25f53dd31582cab25948aa3474c7ed8.ctex"
+uid="uid://ufocbtvx5n7g"
+path="res://.godot/imported/wizzard_m_run_anim_f2.png-93491806ae9990b76903c077401c203c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/zombi/wizzard_m_hit_anim_f0.png"
-dest_files=["res://.godot/imported/wizzard_m_hit_anim_f0.png-f25f53dd31582cab25948aa3474c7ed8.ctex"]
+source_file="res://scenes/zombi/graphics/wizzard_m_run_anim_f2.png"
+dest_files=["res://.godot/imported/wizzard_m_run_anim_f2.png-93491806ae9990b76903c077401c203c.ctex"]
 
 [params]
 

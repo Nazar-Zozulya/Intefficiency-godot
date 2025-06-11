@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://bkdf326kwehrm"]
+
+[ext_resource type="Script" uid="uid://bivfh81aukdas" path="res://scenes/inventory/inventoryItem.gd" id="1_7w843"]
+[ext_resource type="Texture2D" uid="uid://cwga2nkp4garm" path="res://scenes/player/graphics/knight_f_hit_anim_f0.png" id="2_7w843"]
+
+[resource]
+script = ExtResource("1_7w843")
+name = "km"
+texture = ExtResource("2_7w843")
+metadata/_custom_type_script = "uid://bivfh81aukdas"

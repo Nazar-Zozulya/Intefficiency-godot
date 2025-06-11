@@ -1,9 +1,18 @@
-[gd_scene format=3 uid="uid://bjwb0t72n8jr0"]
+[gd_scene load_steps=2 format=3 uid="uid://bjwb0t72n8jr0"]
+
+[ext_resource type="PackedScene" uid="uid://c5vbbmhud488e" path="res://scenes/inventory/inv_panel/inv_panel.tscn" id="1_3csb8"]
 
 [node name="player_ui" type="CanvasLayer"]
 
-[node name="Label" type="Label" parent="."]
+[node name="hpBar" type="Label" parent="."]
 offset_left = 5.0
 offset_top = 2.0
 offset_right = 55.0
 offset_bottom = 25.0
+
+[node name="Control" parent="." instance=ExtResource("1_3csb8")]
+visible = false
+offset_left = 1.0
+offset_top = 35.0
+offset_right = 111.0
+offset_bottom = 83.0

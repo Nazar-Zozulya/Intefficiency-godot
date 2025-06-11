@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://cunusqoli4svs"]
+
+[ext_resource type="Texture2D" uid="uid://b0xurdgjkjooo" path="res://scenes/wall/wall_edge_left.png" id="1_30i5e"]
+[ext_resource type="Script" uid="uid://dm4vvdnb5rvoo" path="res://scenes/inventory/inv_slot/inv_slot.gd" id="1_xqg2u"]
+
+[node name="Panel" type="Panel"]
+custom_minimum_size = Vector2(40, 40)
+anchors_preset = -1
+anchor_right = 0.807
+offset_right = -889.664
+offset_bottom = 40.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_xqg2u")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(20, 20)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_30i5e")
+
+[node name="CenterContainer" type="CenterContainer" parent="background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="background/CenterContainer"]
+layout_mode = 2
+
+[node name="itemIcon" type="Sprite2D" parent="background/CenterContainer/Panel"]
+position = Vector2(0.799999, 0.4)
+scale = Vector2(0.8, 0.8)
