@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="StatBlock" load_steps=2 format=3 uid="uid://c5kbtm0setted"]
+
+[ext_resource type="Script" uid="uid://cuvkgg3okt300" path="res://scripts/stats.gd" id="1_2eiml"]
+
+[resource]
+script = ExtResource("1_2eiml")
+max_health = 10
+speed = 300.0
+damage = 5
+armor = 0
+metadata/_custom_type_script = "uid://cuvkgg3okt300"

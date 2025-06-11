@@ -7,4 +7,8 @@
 script = ExtResource("1_7w843")
 name = "km"
 texture = ExtResource("2_7w843")
+usable = false
+equipable = false
+animation_state = &""
+combine_with = Array[StringName]([])
 metadata/_custom_type_script = "uid://bivfh81aukdas"

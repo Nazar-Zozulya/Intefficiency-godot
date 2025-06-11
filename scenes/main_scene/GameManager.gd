@@ -26,11 +26,9 @@ func load_level(scene_path: String):
 func _on_item_taken(item: InventoryItem) -> void:
 	print("MainScene: предмет взят —", item.name)
 
-	# Существующий сигнал (если нужен где-то еще)
 	emit_signal("item_taken", item)
 
-	# Новый сигнал для, например, inventory panel
-	emit_signal("item_picked_for_inventory", item)
+	#emit_signal("item_picked_for_inventory", item)
 
 func _on_inventory_use_item(item: InventoryItem) -> void:
 	print(item.name)

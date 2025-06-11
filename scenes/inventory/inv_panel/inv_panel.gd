@@ -4,6 +4,8 @@ extends Control
 @onready var inventory: Inventory = preload("res://scenes/inventory/inventory_res.tres")
 @onready var slots: Array  = $GridContainer.get_children()
 
+var dragged_slot_index: int
+
 signal use_item(item: InventoryItem)
 
 const SLOT_ACTIONS = [
@@ -18,21 +20,22 @@ func update():
 		slots[i].update(inventory.items[i])
 
 func _ready():
+	dragged_slot_index = -1
 	update()
 
 func _update_item(index, newItem):
 	inventory.items[index] = newItem
 	slots[index].update(newItem)
 
-#func _on_area_2d_take_item(item: Variant) -> void:
-			
-			#
-			#
-#func _find_clicked_item_index(position) =  > int:
-	#fir i in range(slots.size()):
-		#if slots[i].get_global_rect().has_point(position):
-			#return  i
-		#return -1
+
+func _is_drag() -> bool:
+	return dragged_slot_index > -1
+	
+	
+func _cancel_drag():
+	slots[dragged_slot_index].set_drag(false)
+	dragged_slot_index = -1
+
 
 func _input(event):
 	if !visible: return
@@ -44,6 +47,8 @@ func _input(event):
 			if inventory.items[i] == null:
 				break
 			use_item.emit((inventory.items[i]))
+	
+	
 
 
 func _on_main_scene_item_taken(item: InventoryItem) -> void:
