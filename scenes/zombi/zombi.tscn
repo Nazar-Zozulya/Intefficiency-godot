@@ -1,14 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://byadfrmng55xh"]
+[gd_scene load_steps=12 format=3 uid="uid://byadfrmng55xh"]
 
-[ext_resource type="Texture2D" uid="uid://cgitrgt870gbb" path="res://scenes/zombi/graphics/wizzard_m_idle_anim_f0.png" id="1_l3iyg"]
+[ext_resource type="Texture2D" path="res://scenes/zombi/wizzard_m_idle_anim_f0.png" id="1_l3iyg"]
 [ext_resource type="Script" uid="uid://dc0584e1vv605" path="res://scenes/zombi/zombi.gd" id="1_twx71"]
-[ext_resource type="Texture2D" uid="uid://syl2v2m4e2fm" path="res://scenes/zombi/graphics/wizzard_m_idle_anim_f1.png" id="2_twx71"]
-[ext_resource type="Texture2D" uid="uid://cn0xpeixv1i5q" path="res://scenes/zombi/graphics/wizzard_m_idle_anim_f2.png" id="3_08ufp"]
-[ext_resource type="Texture2D" uid="uid://bj8bk8mfu1m5g" path="res://scenes/zombi/graphics/wizzard_m_idle_anim_f3.png" id="4_3vxmn"]
-[ext_resource type="Texture2D" uid="uid://cx1f1haaiacsk" path="res://scenes/zombi/graphics/wizzard_m_run_anim_f0.png" id="5_wffa7"]
-[ext_resource type="Texture2D" uid="uid://nlmou63lprhi" path="res://scenes/zombi/graphics/wizzard_m_run_anim_f1.png" id="6_i14mq"]
-[ext_resource type="Texture2D" uid="uid://ufocbtvx5n7g" path="res://scenes/zombi/graphics/wizzard_m_run_anim_f2.png" id="7_8yxhd"]
-[ext_resource type="Texture2D" uid="uid://ct0ri3ld5wgt5" path="res://scenes/zombi/graphics/wizzard_m_run_anim_f3.png" id="8_endrn"]
+[ext_resource type="Texture2D" path="res://scenes/zombi/wizzard_m_idle_anim_f1.png" id="2_twx71"]
+[ext_resource type="Texture2D" path="res://scenes/zombi/wizzard_m_idle_anim_f2.png" id="3_08ufp"]
+[ext_resource type="Texture2D" path="res://scenes/zombi/wizzard_m_idle_anim_f3.png" id="4_3vxmn"]
+[ext_resource type="Texture2D" path="res://scenes/zombi/wizzard_m_run_anim_f0.png" id="5_wffa7"]
+[ext_resource type="Texture2D" path="res://scenes/zombi/wizzard_m_run_anim_f1.png" id="6_i14mq"]
+[ext_resource type="Texture2D" path="res://scenes/zombi/wizzard_m_run_anim_f2.png" id="7_8yxhd"]
+[ext_resource type="Texture2D" path="res://scenes/zombi/wizzard_m_run_anim_f3.png" id="8_endrn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pt3hn"]
 animations = [{
@@ -50,11 +50,8 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_m7if7"]
 radius = 4.12311
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_twx71"]
-radius = 6.0
-
 [node name="zombi" type="CharacterBody2D"]
-collision_layer = 4
+collision_layer = 0
 script = ExtResource("1_twx71")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -63,16 +60,8 @@ scale = Vector2(0.78125, 0.696429)
 sprite_frames = SubResource("SpriteFrames_pt3hn")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.870378
+frame_progress = 0.0111315
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_m7if7")
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -4)
-shape = SubResource("CircleShape2D_twx71")
-
-[connection signal="body_entered" from="Area2D" to="." method="_player_entered"]
