@@ -1,3 +1,20 @@
-[gd_scene format=3 uid="uid://cqbjlutkhwecm"]
+[gd_scene load_steps=4 format=3 uid="uid://cqbjlutkhwecm"]
 
-[node name="MobSpawner" type="Node2D"]
+[ext_resource type="Script" uid="uid://brrubg7nnwhcj" path="res://scenes/mob_spawner/mob_spawner.gd" id="1_um0rv"]
+[ext_resource type="Texture2D" uid="uid://b0xurdgjkjooo" path="res://scenes/wall/wall_edge_left.png" id="2_b1qsh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b1qsh"]
+size = Vector2(144, 64)
+
+[node name="mob_spawner" type="Area2D"]
+script = ExtResource("1_um0rv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_b1qsh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(9.0625, 4)
+texture = ExtResource("2_b1qsh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

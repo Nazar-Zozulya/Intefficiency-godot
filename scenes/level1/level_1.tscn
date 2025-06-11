@@ -1,18 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://bt1dkpfu5gvrw"]
+[gd_scene load_steps=6 format=3 uid="uid://bt1dkpfu5gvrw"]
 
-[ext_resource type="Script" uid="uid://b8wqug6tjdhol" path="res://scenes/level1/LevelManager.gd" id="1_h8cug"]
 [ext_resource type="Texture2D" uid="uid://d2eln8oaf71vq" path="res://scenes/level1/bg.jpg" id="1_jrgot"]
+[ext_resource type="PackedScene" uid="uid://b4ldtru322y8" path="res://scenes/potion/item.tscn" id="1_k0kyn"]
 [ext_resource type="PackedScene" uid="uid://t4l8osg6u116" path="res://scenes/wall/wall.tscn" id="2_k0kyn"]
-[ext_resource type="PackedScene" uid="uid://byadfrmng55xh" path="res://scenes/zombi/zombi.tscn" id="4_jrgot"]
 [ext_resource type="PackedScene" uid="uid://cw0ijd4aeynf2" path="res://scenes/player/player.tscn" id="4_od3ps"]
-[ext_resource type="PackedScene" uid="uid://b4ldtru322y8" path="res://scenes/potion/item.tscn" id="5_k0kyn"]
-[ext_resource type="Resource" uid="uid://dhr7ivp664rd8" path="res://scenes/inventory/lifepotion.tres" id="6_8702e"]
+[ext_resource type="PackedScene" uid="uid://cqbjlutkhwecm" path="res://scenes/mob_spawner/MobSpawner.tscn" id="5_k0kyn"]
 
 [node name="level1" type="Node2D"]
-script = ExtResource("1_h8cug")
+
+[node name="item" parent="." instance=ExtResource("1_k0kyn")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(7, 2)
+position = Vector2(5, -9)
 texture = ExtResource("1_jrgot")
 
 [node name="wall" parent="." instance=ExtResource("2_k0kyn")]
@@ -24,11 +23,7 @@ position = Vector2(346, -22)
 [node name="wall3" parent="." instance=ExtResource("2_k0kyn")]
 position = Vector2(345, -166)
 
+[node name="mob_spawner" parent="." instance=ExtResource("5_k0kyn")]
+position = Vector2(-116, -75)
+
 [node name="player" parent="." instance=ExtResource("4_od3ps")]
-
-[node name="zombi" parent="." instance=ExtResource("4_jrgot")]
-position = Vector2(142, -3)
-
-[node name="Area2D" parent="." instance=ExtResource("5_k0kyn")]
-position = Vector2(-68, -209)
-item = ExtResource("6_8702e")
